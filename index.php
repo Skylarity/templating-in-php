@@ -52,7 +52,7 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#">Catnip</a></li>
+								<li><a href="catnip/">Catnip</a></li>
 								<li><a href="#">Toys</a></li>
 								<li><a href="#">Kitty Treats</a></li>
 								<li><a href="https://senator-arlo.bowtied.io/" target="_blank">Feel the Fuzzy</a></li>
