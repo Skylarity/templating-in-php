@@ -1,3 +1,18 @@
+<?php
+/**
+ * Get the relative path.
+ * @see https://raw.githubusercontent.com/kingscreations/farm-to-you/master/php/lib/_header.php FarmToYou Header
+ **/
+
+// include the appropriate number of dirname() functions
+// on line 8 to correctly resolve your directory's path
+require_once(dirname(__DIR__, 2) . "/root-path.php");
+$CURRENT_DEPTH = substr_count($CURRENT_DIR, "/");
+$ROOT_DEPTH = substr_count($ROOT_PATH, "/");
+$DEPTH_DIFFERENCE = $CURRENT_DEPTH - $ROOT_DEPTH;
+$PREFIX = str_repeat("../", $DEPTH_DIFFERENCE);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -13,7 +28,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
 		<!-- My Custom CSS rlewis37@cnm.edu -->
-		<link rel="stylesheet" href="css/style.css" type="text/css"/>
+		<link rel="stylesheet" href="<?php echo $PREFIX;?>css/style.css" type="text/css"/>
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,5 +43,5 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-		<title>Basic Bootstrap Wireframe Exercise</title>
+		<title><?php echo $PAGE_TITLE;?></title>
 	</head>
